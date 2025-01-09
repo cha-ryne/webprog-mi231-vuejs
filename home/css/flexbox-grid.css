@@ -12,6 +12,8 @@ body {
     grid-template-rows: auto 1fr auto;
     gap: 20px;
     padding: 20px;
+    border: none; 
+    display: block; 
   }
   
   .header {
