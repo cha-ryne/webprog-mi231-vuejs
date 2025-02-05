@@ -96,13 +96,12 @@ onMounted(() => {
 }
 
 label {
-  display: block;
-  margin-bottom: 0.5rem;
   width: 100px; /* Adjust width as needed */
+  margin-right: 10px; /* Add space between label and input */
 }
 
 .form-control {
-  width: 75%;
+  flex: 1; /* Allow input to take remaining space */
   padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 4px;
