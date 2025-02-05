@@ -1,4 +1,5 @@
 <template>
+  <personal-profile/> <br>
   <h1>Food</h1>
   <food-item/>
   <food-item2/>
@@ -6,7 +7,6 @@
   <country/>
   <h1>Comments</h1>
   <comment-form/>
-  <personal-profile/> <br>
 </template>
 
 <script></script>
