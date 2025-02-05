@@ -102,7 +102,7 @@
 </template>
 
 <script></script>
-<style>
+<style scoped>
 header {
   background: linear-gradient(90deg, #f8bae3, #dc55ab, #F11EB6);
   color: white;
