@@ -96,7 +96,7 @@ label {
 }
 
 .form-control {
-  width: 100%;
+  width: 70%;
   padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 4px;
