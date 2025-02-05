@@ -4,6 +4,7 @@
   <food-item2/>
   <food-item/>
   <country/>
+  <h1>Comments</h1>
   <comment-form/>
   <personal-profile/> <br>
 </template>
