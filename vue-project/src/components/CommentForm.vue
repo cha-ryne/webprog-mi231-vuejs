@@ -15,16 +15,25 @@
         {{ submissionStatus }}
       </div>
     </form>
+
+    <h1>Comments</h1>
+    <ul>
+      <li v-for="comment in comments" :key="comment.id" class="comment-item">
+        <span class="comment-name">{{ comment.name }}</span>: 
+        <span class="comment-text">{{ comment.comment }}</span>
+      </li>
+    </ul>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import { supabase } from '../lib/supabaseClient';
 
 const name = ref('');
 const comment = ref('');
 const submissionStatus = ref(null);
+const comments = ref([]);
 
 // Your Supabase URL and Key - IMPORTANT!
 const tableName = 'comments'; // Name of your Supabase table
@@ -49,12 +58,30 @@ async function submitComment() {
       submissionStatus.value = "Comment submitted successfully!";
       name.value = ''; // Clear form fields
       comment.value = '';
+      fetchComments(); // Refresh comments
     }
   } catch (err) {
     console.error("An unexpected error occurred:", err);
     submissionStatus.value = "An unexpected error occurred. Please try again later.";
   }
 }
+
+async function fetchComments() {
+  const { data, error } = await supabase
+    .from(tableName)
+    .select('*')
+    .order('created_at', { ascending: false });
+
+  if (error) {
+    console.error("Error fetching comments:", error);
+  } else {
+    comments.value = data;
+  }
+}
+
+onMounted(() => {
+  fetchComments();
+});
 </script>
 
 <style scoped>
@@ -82,5 +109,28 @@ label {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.comment-item {
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+
+.comment-name {
+  font-weight: bold;
+  color: #333;
+}
+
+.comment-text {
+  margin-left: 5px;
+  color: #555;
+}
+
+#app > div {
+  border: dashed black 1px;
+  display: inline-block;
+  margin: 10px;
+  padding: 10px;
+  background-color: lightyellow;
 }
 </style>
