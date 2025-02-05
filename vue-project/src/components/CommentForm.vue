@@ -33,6 +33,12 @@
   async function submitComment() {
     submissionStatus.value = "Submitting...";
     try {
+      const newComment = {
+          name: name.value,
+          comment: comment.value,
+          created_at: new Date().toISOString() // Ensure correct format
+    };
+
       const { error } = await supabase
         .from(tableName)
         .insert([{ name: name.value, comment: comment.value }]);
