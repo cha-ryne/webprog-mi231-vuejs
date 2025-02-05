@@ -90,21 +90,28 @@ onMounted(() => {
   margin-bottom: 1rem;
 }
 
+.form-row {
+  display: flex;
+  align-items: center;
+}
+
 label {
   display: block;
   margin-bottom: 0.5rem;
+  width: 100px; /* Adjust width as needed */
 }
 
 .form-control {
-  width: 70%;
+  width: 75%;
   padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 4px;
+  background-color: white; /* Add white background */
 }
 
 .btn {
   padding: 0.5rem 1rem;
-  background-color: #007bff;
+  background-color: hotpink;
   color: white;
   border: none;
   border-radius: 4px;
@@ -114,6 +121,7 @@ label {
 .comment-item {
   border-bottom: 1px solid #ccc;
   padding: 10px 0;
+  background-color: white; /* Add white background */
 }
 
 .comment-name {
