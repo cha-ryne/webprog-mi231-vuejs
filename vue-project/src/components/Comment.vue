@@ -27,4 +27,26 @@ onMounted(() => {
 </script>
 
 <style scoped>
+.comment-item {
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+
+.comment-name {
+  font-weight: bold;
+  color: #333;
+}
+
+.comment-text {
+  margin-left: 5px;
+  color: #555;
+}
+
+#app > div {
+  border: dashed black 1px;
+  display: inline-block;
+  margin: 10px;
+  padding: 10px;
+  background-color: lightyellow;
+}
 </style>

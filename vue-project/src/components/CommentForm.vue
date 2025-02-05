@@ -17,7 +17,7 @@
     </form>
 
     <h1>Comments</h1>
-    <ul>
+    <ul class="comments-list">
       <li v-for="comment in comments" :key="comment.id" class="comment-item">
         <span class="comment-name">{{ comment.name }}</span>: 
         <span class="comment-text">{{ comment.comment }}</span>
@@ -96,12 +96,13 @@ onMounted(() => {
 }
 
 label {
+  display: block;
+  margin-bottom: 0.5rem;
   width: 100px; /* Adjust width as needed */
-  margin-right: 10px; /* Add space between label and input */
 }
 
 .form-control {
-  flex: 1; /* Allow input to take remaining space */
+  width: 75%;
   padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -115,6 +116,11 @@ label {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.comments-list {
+  list-style-type: none; /* Remove bullet points */
+  padding: 0; /* Remove default padding */
 }
 
 .comment-item {
