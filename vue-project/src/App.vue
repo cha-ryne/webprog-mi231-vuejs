@@ -7,6 +7,7 @@
   <country/>
   <h1>Comments</h1>
   <comment-form/>
+  <h1>Rest Api</h1>
   <rest-api/>
 </template>
 
